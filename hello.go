@@ -1,16 +1,12 @@
-package hello
-
 import (
-	"net/http"
-	"log"
-	"fmt"
+    "fmt"
+    "net/http"
 )
 
-func hello() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello World")
-	})
+func init() {
+    http.HandleFunc("/", handler)
+}
 
-    log.Println("Listening on 8080")
-	http.ListenAndServe(":8080", nil)
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, "Hello, world!")
 }
