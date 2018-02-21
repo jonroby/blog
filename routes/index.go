@@ -6,6 +6,6 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-    t, _ := template.ParseFiles("templates/index.html")
+    t, _ := template.ParseFiles("../templates/index.html") // relative?
     t.Execute(w, nil)
 }
