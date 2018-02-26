@@ -20,3 +20,10 @@
     gcloud auth login
     gcloud auth application-default login
     ./cloud_sql_proxy -instances=<INSTANCE_NAME>=tcp:5432
+
+### todo
+    styles
+    user input
+    safe
+    use dev app server
+    use appEngine.isDevAppServer() for dev

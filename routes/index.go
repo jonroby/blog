@@ -7,7 +7,6 @@ import (
     "html/template"
     "database/sql"
     _ "github.com/lib/pq"
-    "fmt"
 )
 
 type Post struct {
@@ -18,9 +17,13 @@ var db *sql.DB
 
 func Index(w http.ResponseWriter, r *http.Request) {
 
-    // Set this in app.yaml when running in production.
-    datastoreName := os.Getenv("POSTGRES_CONNECTION")
-    fmt.Println(datastoreName)
+    var datastoreName string
+    if (os.Getenv("BLOG_ENV") == "DEV") {
+        datastoreName = os.Getenv("BLOG_PG_CONN_DEV")
+    } else {
+        datastoreName = os.Getenv("BLOG_PG_CONN_PROD")
+    }
+
     var err error
     db, err = sql.Open("postgres", datastoreName)
     if err != nil {
