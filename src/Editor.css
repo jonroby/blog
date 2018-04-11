@@ -1,0 +1,27 @@
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "San Francisco", "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    color: #242729;
+    color: #656a71;
+    line-height: 24px;
+
+}
+
+.editor {
+    width: 800px;
+    /* border-left: 2px solid black; */
+    /* border-right: 2px solid black; */
+
+}
+
+.editor-controls {
+    width: 800px;
+    /* border-bottom: 2px solid black; */
+}

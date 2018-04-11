@@ -7,7 +7,7 @@ class App extends Component {
     return (
         <div className="navbar-container">
             <div className="navbar">
-                <div className="navbar-articles">Posts</div>
+                <div className="navbar-posts">Posts</div>
                 <div className="navbar-jonroby">
                     <div className="navbar-jon">Jon</div>
                     <div className="navbar-roby">Roby</div>
