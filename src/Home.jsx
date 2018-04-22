@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
-import './Navbar.css';
+import './Home.css';
 
-class Home extends Component {
+ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-        Home
+
+        home
+
+
       </div>
     );
   }
