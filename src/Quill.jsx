@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import ReactQuill from "react-quill";
 import { db } from "./firebase/firebase.js";
 
-import { sentenceToCamel, camelToKabob } from "./helpers/caseConversions.js";
+import {
+  sentenceToCamel,
+  camelToKabob,
+  kabobToCamel
+} from "./helpers/caseConversions.js";
+
+import "./Quill.css";
 
 const modules = {
   toolbar: [
@@ -45,6 +51,29 @@ class Quill extends Component {
     this.state = { text: "", category: "" }; // You can also pass a Quill Delta here
   }
 
+  componentDidMount() {
+    // this.props.location.split("/")[2];
+    const url = this.props.location.pathname.split("/")[2];
+    this.fetchPost(url);
+  }
+
+  fetchPost = title => {
+    console.log("title", title);
+    const titleCamel = kabobToCamel(title);
+    db
+      .ref(`posts/${titleCamel}`)
+      .orderByKey()
+      .on("value", snapshot => {
+        console.log("snapshot ", snapshot.val());
+        if (snapshot.val()) {
+          this.setState({
+            category: snapshot.val().category,
+            text: snapshot.val().text
+          });
+        }
+      });
+  };
+
   handleQuillChange = value => {
     this.setState({ text: value });
   };
@@ -58,7 +87,6 @@ class Quill extends Component {
   getMetadata = text => {
     const el = document.createElement("html");
     el.innerHTML = text;
-    console.log("el ", el);
 
     const titleEl = el.getElementsByTagName("h1");
     const subtitleEl = el.getElementsByTagName("h2");
@@ -103,21 +131,27 @@ class Quill extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.savePost}>Submit</button>
+      <div className="editor-screen">
+        <div className="editor-container">
+          <div className="editor-controls">
+            <button onClick={this.savePost}>Submit</button>
 
-        <input
-          type="text"
-          value={this.state.category}
-          onChange={this.handleChange("category")}
-        />
+            <input
+              type="text"
+              value={this.state.category}
+              onChange={this.handleChange("category")}
+            />
+          </div>
 
-        <ReactQuill
-          value={this.state.text}
-          onChange={this.handleQuillChange}
-          modules={modules}
-          formats={formats}
-        />
+          <div className="editor-quill">
+            <ReactQuill
+              value={this.state.text}
+              onChange={this.handleQuillChange}
+              modules={modules}
+              formats={formats}
+            />
+          </div>
+        </div>
       </div>
     );
   }
