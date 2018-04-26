@@ -9,6 +9,7 @@ class SocialMediaLinks extends Component {
 
   render() {
     const { width } = this.props;
+    return null;
     return (
       <div className="social-links-container">
         <div className="social-links-fixed" style={{ width }}>
