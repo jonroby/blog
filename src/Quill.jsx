@@ -9,6 +9,7 @@ import {
 } from "./helpers/caseConversions.js";
 
 import "./Quill.css";
+import "./Post.css";
 
 const modules = {
   toolbar: [
@@ -48,11 +49,18 @@ const formats = [
 class Quill extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: "", category: "" }; // You can also pass a Quill Delta here
+    this.state = { text: "", category: "", theme: "bubble" }; // You can also pass a Quill Delta here
   }
 
   componentDidMount() {
-    // this.props.location.split("/")[2];
+    let element = document.getElementsByClassName('ql-tooltip')[0];
+    console.log('el ', element);
+
+    element.addEventListener("mousedown", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    });
+
     const url = this.props.location.pathname.split("/")[2];
     this.fetchPost(url);
   }
@@ -132,7 +140,7 @@ class Quill extends Component {
   render() {
     return (
       <div className="editor-screen">
-        <div className="editor-container">
+        <div className="editor-screen-middle">
           <div className="editor-controls">
             <button onClick={this.savePost}>Submit</button>
 
@@ -149,6 +157,7 @@ class Quill extends Component {
               onChange={this.handleQuillChange}
               modules={modules}
               formats={formats}
+              theme="bubble"
             />
           </div>
         </div>
