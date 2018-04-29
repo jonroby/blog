@@ -1,30 +1,48 @@
 import React, { Component } from "react";
+import Contents from "./Contents.jsx";
+import SocialLinks from "./SocialMediaLinks.jsx";
+import { kabobToCamel } from "./helpers/caseConversions.js";
 import { db } from "./firebase/firebase.js";
 
 import "./Post.css";
 
-// https://www.webdesignerdepot.com/2015/08/30-impactful-black-and-white-websites/
-// http://www.laureboutmy.com/
+class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postText: "",
+      contents: [],
+      rightWidth: 1
+    };
 
-class Posts extends Component {
-  state = {
-    postText: ""
-  };
+      /* this.socialLinksRef = React.createRef();*/
+  }
 
   componentDidMount() {
     const title = this.getPostTitle();
-    console.log("title ", title);
     this.fetchPost(title);
+  }
+
+  componentDidUpdate() {
+      /* if (this.socialLinksRef.current.offsetWidth !== this.state.rightWidth) {
+       *   this.setState({ rightWidth: this.socialLinksRef.current.offsetWidth });
+       * }*/
   }
 
   fetchPost = title => {
     console.log("title", title);
+    const titleCamel = kabobToCamel(title);
     db
-      .ref(`posts/${title}`)
+      .ref(`posts/${titleCamel}`)
       .orderByKey()
       .on("value", snapshot => {
-        console.log("snapshot ", snapshot.key);
-        this.setState({ postText: snapshot.val().text });
+        console.log("snapshot ", snapshot.val().contents);
+        if (snapshot.val()) {
+          this.setState({
+            contents: snapshot.val().sections,
+            postText: snapshot.val().text
+          });
+        }
       });
   };
 
@@ -36,7 +54,7 @@ class Posts extends Component {
     if (this.state.postText !== "") {
       return (
         <div className="post">
-          <div dangerouslySetInnerHTML={{ __html: this.state.postText }} />;
+          <div dangerouslySetInnerHTML={{ __html: this.state.postText }} />
         </div>
       );
     }
@@ -45,20 +63,23 @@ class Posts extends Component {
   };
 
   render() {
+      /* const width =
+       *   (this.socialLinksRef.current &&
+       *     this.socialLinksRef.current.offsetWidth) ||
+       *   1;*/
+
     return (
       <div className="post-container">
-        <div className="contents">Contents</div>
+          {/* <div className="post-screen-right">
+              <Contents width={width} contents={this.state.contents} />
+              </div> */}
         {this.renderPost()}
-        <div className="social-links">
-          <div>
-            <i className="fa fa-github" />
-            <i className="fa fa-linkedin" />
-            <i className="fa fa-google" />
-          </div>
-        </div>
+          {/* <div className="post-screen-right" ref={this.socialLinksRef}>
+              <SocialLinks width={width} />
+              </div> */}
       </div>
     );
   }
 }
 
-export default Posts;
+export default Post;

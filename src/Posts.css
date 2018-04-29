@@ -1,0 +1,156 @@
+.posts-screen {
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    color: #242729;
+
+    height: 100%;
+
+    color: white;
+    background-color: #242729;
+    transition-duration: .4s;
+}
+
+.posts-screen-left {
+    flex: 1;
+}
+
+.posts-screen-middle {
+    flex: 0 0 740px;
+    max-width: 740px;
+    justify-content: center;
+}
+
+.posts-screen-right {
+    flex: 1;
+    position: relative;
+}
+
+.posts-item-container-container {
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: row;
+
+}
+
+.posts-item-number {
+    align-self: center;
+}
+
+.posts-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 170px; */
+    padding-bottom: 60px;
+}
+
+.posts-item-number {
+    font-family: "Sentinel A", "Sentinel B";
+    /* font-style: italic; */
+    font-size: 16px;
+    width: 26px;
+    height: 26px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color:  #242729;
+    color: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-item-container {
+    font-weight: 700;
+
+}
+
+.posts-item-container a:hover {
+    color: #19B5FE;
+
+
+    transition: .2s;
+
+
+}
+
+.posts-item-metadata-category {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Sentinel A", "Sentinel B";
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+
+}
+
+/* .posts-item-metadata-line { */
+/*     border-bottom: 1px solid #242729; */
+/*     width: 40px; */
+/* } */
+
+.posts-item-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* .posts-item-data a:hover { */
+/*     background-color: white; */
+/* } */
+
+.posts-item-data-title {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-weight: inherit;
+    font-size: 26px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+/* .post-item-data-title a:hover { */
+/*     background-color: white; */
+/* } */
+
+.posts-item-data-subtitle {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    /* font-family: "Sentinel A", "Sentinel B"; */
+    font-weight: 300;
+    font-size: 20px;
+    /* font-style: italic; */
+    color: #d9d9d9;
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .posts-screen {
+        display: flex;
+        width: 100%;
+    }
+
+    .posts-item-container {
+        width: 100%;
+    }
+
+    .posts-screen-left {
+        display: none;
+    }
+
+    .posts-screen-middle {
+        width: 100%;
+        max-width: none;
+        /* display: flex; */
+        /* flex-direction: column; */
+        flex-basis: auto;
+    }
+
+    .posts-screen-right {
+        display: none;
+    }
+}

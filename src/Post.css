@@ -1,0 +1,123 @@
+/* @font-face { */
+/*     font-family: "Source Code Pro"; */
+/*     src: url("/public/SourceCodePro-Regular.otf") format("otf"); */
+/* } */
+
+.post-container {
+    width: 100%;
+    color: #242729;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    transition-duration: 2s;
+    padding-top: 40px;
+}
+
+.contents {
+    flex: 1;
+}
+
+.post {
+    /* flex: 0 0 740px; */
+    max-width: 740px;
+}
+
+.post-screen-right {
+    flex: 1;
+    position: relative;
+}
+
+h1 {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: lowercase;
+    color: #333333;
+}
+
+h4 {
+    font-family: "Gotham SSm A", "Gotham SSm B";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #333333;
+    
+}
+
+p {
+    font-family: "Sentinel A", "Sentinel B";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+
+    
+}
+
+pre {
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Source Code Pro";
+    background-color: rgba(0,0,0,.05);
+    font-size: 16px;
+}
+
+.ql-syntax {
+    
+}
+
+li {
+    font-family: "Sentinel A", "Sentinel B";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+@media only screen and (max-width: 740px) {
+    /* .post-container { */
+    /*     width: 100%; */
+    /* } */
+
+    .post {
+        width: 96%;
+        flex: none;
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+
+    .post-screen-left {
+        display: none;
+    }
+
+    .post-screen-middle {
+        width: 100%;
+        max-width: none;
+        /* display: flex; */
+        /* flex-direction: column; */
+        flex-basis: auto;
+    }
+
+    .post-screen-right {
+        display: none;
+    }
+}
+
+
