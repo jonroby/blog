@@ -13,3 +13,9 @@
     align-self: center;
     max-width: 740px;
 }
+
+.ql-snow .ql-tooltip input[type=text] {
+    height: 200px;
+    width: 500px;
+}
+

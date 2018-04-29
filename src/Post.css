@@ -60,21 +60,29 @@ p {
     font-weight: 300;
     font-size: 22px;
     line-height: 30px;
-
-    
 }
+
+p span {
+    font-family: "Source Code Pro";
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 30px;
+}
+
 
 pre {
     padding: 20px;
     box-sizing: border-box;
     font-family: "Source Code Pro";
-    background-color: rgba(0,0,0,.05);
+    background-color: #f2f2f2;
     font-size: 16px;
+    white-space: pre-wrap;
 }
 
-.ql-syntax {
-    
-}
 
 li {
     font-family: "Sentinel A", "Sentinel B";
@@ -99,9 +107,6 @@ li {
         line-height: 26px;
     }
 
-    pre {
-        white-space: pre-wrap;
-    }
 
     .post-screen-left {
         display: none;

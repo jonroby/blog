@@ -12,23 +12,25 @@ import "./Quill.css";
 import "./Post.css";
 
 const modules = {
-  toolbar: [
-    [{ header: [1, 2, false] }],
-    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
-    [
-      { list: "ordered" },
-      { list: "bullet" },
-      { indent: "-1" },
-      { indent: "+1" }
-    ],
-    ["link", "image", "formula"],
-    [{ script: "sub" }, { script: "super" }],
-    [{ align: [] }],
-    ["clean"]
-  ]
+    toolbar: [
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+        [ {"background": [ "#f3f3f3" ]} ],
+        ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+        [
+            { list: "ordered" },
+            { list: "bullet" },
+            { indent: "-1" },
+            { indent: "+1" }
+        ],
+        ["link", "image", "formula"],
+        [{ script: "sub" }, { script: "super" }],
+        [{ align: [] }],
+        ["clean"]
+    ]
 };
 
 const formats = [
+    "background",
   "header",
   "bold",
   "italic",
