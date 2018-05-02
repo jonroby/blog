@@ -1,2 +1,9 @@
 cloud_sql_proxy
 node_modules
+firebase
+firebase.json
+datastore
+build
+.firebaserc
+.DS_Store
+public/.DS_Store
