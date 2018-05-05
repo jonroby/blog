@@ -48,7 +48,7 @@ class Posts extends Component {
       .on("value", snapshot => {
         const posts = [];
         snapshot.forEach(child => {
-          console.log("child ", child.val());
+            /* console.log("child ", child.val());*/
           posts.push(child.val());
         });
 

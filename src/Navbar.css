@@ -3,21 +3,29 @@
     justify-content: center;
     width: 100%;
     height: 80px;
-    /* font-family: "Roboto Condensed"; */
+    
 
     font-family: "Gotham SSm A", "Gotham SSm B";
     font-style: normal;
     font-weight: 400;
 
-		color: #545454;
-    color: #333333;
-    color: #242729;
-    background-color: #242729;
-    color: white;
+
+		/* color: #545454; */
+    /* color: #333333; */
+    /* color: #242729; */
+    /* color: #d3d3d3; */
+
+    /* background-color: #242729; */
+    /* background-color: white; */
+    /* color: #2424729; */
+
+    /* color: white; */
+    /* border-bottom: 1px solid #f9f9f9; */
 
     transition-duration: .2s;
 
-    
+    /* position: fixed; */
+    /* background-color: white; */
 }
 
 .navbar {
@@ -25,11 +33,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
-    max-width: 800px;
+    width: 740px;
+    max-width: 740px;
     padding-left: 5px;
     padding-right: 5px;
     /* background-color: red; */
+}
+
+.navbar a {
+    text-decoration: inherit;
 }
 
 .navbar-jonroby {
@@ -50,13 +62,15 @@
 }
 
 .navbar-posts {
-    font-weight: 700;
+    /* font-weight: 700; */
     font-size: 20px;
     font-size: 1.1em;
+    width: 51px;
+    transition-duration: .2s;
 }
 
 .navbar-posts:hover {
-		font-weight: 200;
+		font-weight: 700;
 		transition-duration: .2s;
 }
 
@@ -64,10 +78,17 @@
     font-size: 20px;
     font-weight: 300;
     font-size: 1.1em;
+    width: 58px;
+    transition-duration: .2s;
 }
 
 .navbar-about:hover {
 		font-weight: 700;
 		transition-duration: .2s;
+}
+
+#navbar-active-tab {
+    font-weight: 700;
+    transition-duration: .2s;
 }
 

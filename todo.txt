@@ -1,0 +1,46 @@
+Editor
+X 1. Katex needs to be centered on page.
+X 2. Katex form needs to be much larger.
+X 3. Buttons need to follow user down.
+X 4. Background color for inline code.
+X 5. semi-colon at the end (lib bug?)
+6. Styling not the same as it is in posts.
+X 7. Need text wrap.
+X 8. Style list font and size.
+9. Editing a title will add a new entry to database,
+   whereas we need to update the entry.
+X 10. On an edit, it jumps to top.
+X 11. Source Code Pro in prod
+
+Routing
+X 1. Needs to have a default route.
+2. Switching navbar colors is atrocious.
+X 3. Only allow 3 routes: /posts /posts/:id /about
+
+Other
+1. Add social links.
+2. Fill out about section.
+3. favicon isn't showing in production.
+4. Ensure everything is responsive.
+X 5. &nbsp; takes up space on line even though it's not visible.
+6. Disallow editor. For development only!
+7. Add scss variables.
+8. Find mathematically pleasing spacing between lines.
+9. Find right padding for pre and inline background colors that
+   match mathematically pleasing lines.
+10. Default Route.
+X 11. About page, minimal amount of detail.
+12. About page, fill in more detail.
+13. Make sure subtitles on posts page, matches color in post page.
+X 14. Navbar title wiggles on hover of 'Posts' or 'About';
+15. Admin authorization. (https://stackoverflow.com/questions/41771808/how-to-only-allow-one-admin-user-to-write-firebase-database)
+16. Add version.
+17. Add date.
+18. Add length.
+X 19. Superscript affects line height.
+X 20. background colors appears to affect line height.
+X 21. About and Posts need to be highlighted at the correct time.
+22. Bigger line height for pre.
+X 23. Custom styling for background-color affects Katex styling.
+24. Style footnotes header.
+25. Used hack (strikethrough for inline code). Find better solution.

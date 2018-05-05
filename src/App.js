@@ -7,6 +7,7 @@ import About from "./About.jsx";
 import Posts from "./Posts.jsx";
 import Post from "./Post.jsx";
 import Quill from "./Quill.jsx";
+import Default from "./Default.jsx";
 
 import "./App.css";
 
@@ -18,14 +19,15 @@ class App extends Component {
                 <Route path="/" component={Navbar} />
 
                 <Switch>
-                  <Route exact path="/posts" component={Posts} />
-                  <Route exact path="/posts/:post" component={Post} />
+                    <Route exact path="/" component={Posts} />
+                    <Route exact path="/posts" component={Posts} />
+                    <Route exact path="/posts/:post" component={Post} />
 
-                  <Route exact path="/editor" component={Quill} />
-                  <Route exact path="/editor/:post" component={Quill} />
-                  <Route exact path="/about" component={About} />
+                    <Route exact path="/editor" component={Quill} />
+                    <Route exact path="/editor/:post" component={Quill} />
+                    <Route exact path="/about" component={About} />
 
-                  <Route path="*" component={Posts} />
+                    <Route path="*" component={Default} />
                 </Switch>
             </div>
         </BrowserRouter>

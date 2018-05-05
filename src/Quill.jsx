@@ -48,15 +48,36 @@ const formats = [
   "align"
 ];
 
+/* class ImageBlot extends BlockEmbed {
+ *     static create(value) {
+ *         let node = super.create();
+ *         node.setAttribute('alt', value.alt);
+ *         node.setAttribute('src', value.url);
+ *         node.setAttribute('class', "img-fluid");
+ *         return node;
+ *     }
+ * 
+ *     static value(node) {
+ *         return {
+ *             alt: node.getAttribute('alt'),
+ *             url: node.getAttribute('src')
+ *         };
+ *     }
+ * }
+ * ImageBlot.blotName = 'image';
+ * ImageBlot.tagName = 'img';*/
+
+/* Quill.register(ImageBlot);*/
+
+
 class Quill extends Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = { text: "", category: "", theme: "bubble" }; // You can also pass a Quill Delta here
   }
 
   componentDidMount() {
     let element = document.getElementsByClassName('ql-tooltip')[0];
-    console.log('el ', element);
 
     element.addEventListener("mousedown", function(event) {
         event.preventDefault();
@@ -64,11 +85,12 @@ class Quill extends Component {
     });
 
     const url = this.props.location.pathname.split("/")[2];
-    this.fetchPost(url);
+    if (url) {
+        this.fetchPost(url);
+    }
   }
 
   fetchPost = title => {
-    console.log("title", title);
     const titleCamel = kabobToCamel(title);
     db
       .ref(`posts/${titleCamel}`)
@@ -89,7 +111,6 @@ class Quill extends Component {
   };
 
   handleChange = key => event => {
-    console.log("key", key);
     event.preventDefault();
     this.setState({ [key]: event.target.value });
   };
@@ -167,5 +188,11 @@ class Quill extends Component {
     );
   }
 }
+
+/* var ColorClass = ReactQuill.import('attributors/class/color');
+ * var SizeStyle = ReactQuill.import('attributors/style/size');
+ * ReactQuill.register(ColorClass, true);
+ * ReactQuill.register(SizeStyle, true);*/
+
 
 export default Quill;

@@ -1,7 +1,7 @@
-/* @font-face { */
-/*     font-family: "Source Code Pro"; */
-/*     src: url("/public/SourceCodePro-Regular.otf") format("otf"); */
-/* } */
+@font-face {
+    font-family: "SourceCodePro";
+    src: url('SourceCodePro-Regular.otf');
+}
 
 .post-container {
     width: 100%;
@@ -59,29 +59,51 @@ p {
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
-    line-height: 30px;
+    line-height: 32px;
 }
 
-p span {
-    font-family: "Source Code Pro";
-    padding-left: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-right: 5px;
+p s {
+    background-color: #f3f3f3;
+    font-family: "SourceCodePro";
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
     font-size: 16px;
+
+    line-height: 26px;
     font-weight: 400;
-    height: 30px;
+
+    text-decoration: none;
+    /* line height is being used to offset extra height due to font-size??? */
 }
 
+sup { vertical-align: top; position: relative; top: -0.3em; }
 
 pre {
     padding: 20px;
     box-sizing: border-box;
-    font-family: "Source Code Pro";
+    font-family: "SourceCodePro";
     background-color: #f2f2f2;
     font-size: 16px;
     white-space: pre-wrap;
 }
+
+.ql-align-center {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* background-color: #f2f2f2; */
+}
+
+.katex  {
+    /* font-size: 1em; */
+    /* font-size: 1em; */
+}
+
+/* .mord { */
+/*     font-size: .7em; */
+/* } */
 
 
 li {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navbar } from './Navbar.jsx';
 import Contents from "./Contents.jsx";
 import SocialLinks from "./SocialMediaLinks.jsx";
 import { kabobToCamel } from "./helpers/caseConversions.js";
@@ -12,7 +13,8 @@ class Post extends Component {
     this.state = {
       postText: "",
       contents: [],
-      rightWidth: 1
+      rightWidth: 1,
+        scriptAdded: false,
     };
 
       /* this.socialLinksRef = React.createRef();*/
@@ -21,22 +23,48 @@ class Post extends Component {
   componentDidMount() {
     const title = this.getPostTitle();
     this.fetchPost(title);
+
+      /* if (this.mathJaxScript) {
+       *     this.mathJaxScript.parentNode.removeChild(this.mathJaxScript)
+       * }*/
+
+      /* let script = document.createElement("script");
+       * script.id = "mathjax-script"
+       * script.type = "text/javascript";
+       * script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML";
+       * console.log('script 2', script)
+       * this.mathJaxScript = document.getElementsByTagName("head")[0].appendChild(script);    */
+      console.log('mounting ')
+
+
+
   }
 
   componentDidUpdate() {
       /* if (this.socialLinksRef.current.offsetWidth !== this.state.rightWidth) {
        *   this.setState({ rightWidth: this.socialLinksRef.current.offsetWidth });
        * }*/
+          let script = document.createElement("script");
+          script.id = "mathjax-script"
+          script.type = "text/javascript";
+          script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML";
+          console.log('script 2', script)
+          this.mathJaxScript = document.getElementsByTagName("head")[0].appendChild(script);
+          script = null;
   }
 
-  fetchPost = title => {
-    console.log("title", title);
+  componentWillUnmount() {
+      this.mathJaxScript.parentNode.removeChild(this.mathJaxScript)
+      this.mathJaxScript = null;
+      window.MathJax = undefined;
+  }
+
+    fetchPost = title => {
     const titleCamel = kabobToCamel(title);
     db
       .ref(`posts/${titleCamel}`)
       .orderByKey()
       .on("value", snapshot => {
-        console.log("snapshot ", snapshot.val().contents);
         if (snapshot.val()) {
           this.setState({
             contents: snapshot.val().sections,
