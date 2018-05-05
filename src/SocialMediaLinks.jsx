@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './SocialMediaLinks.css';
+import "./SocialMediaLinks.css";
 
 class SocialMediaLinks extends Component {
   constructor(props) {

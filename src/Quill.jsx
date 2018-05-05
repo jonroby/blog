@@ -12,25 +12,25 @@ import "./Quill.css";
 import "./Post.css";
 
 const modules = {
-    toolbar: [
-        [{ header: [1, 2, 3, 4, 5, 6, false] }],
-        [ {"background": [ "#f3f3f3" ]} ],
-        ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
-        [
-            { list: "ordered" },
-            { list: "bullet" },
-            { indent: "-1" },
-            { indent: "+1" }
-        ],
-        ["link", "image", "formula"],
-        [{ script: "sub" }, { script: "super" }],
-        [{ align: [] }],
-        ["clean"]
-    ]
+  toolbar: [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    [{ background: ["#f3f3f3"] }],
+    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" }
+    ],
+    ["link", "image", "formula"],
+    [{ script: "sub" }, { script: "super" }],
+    [{ align: [] }],
+    ["clean"]
+  ]
 };
 
 const formats = [
-    "background",
+  "background",
   "header",
   "bold",
   "italic",
@@ -69,24 +69,23 @@ const formats = [
 
 /* Quill.register(ImageBlot);*/
 
-
 class Quill extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = { text: "", category: "", theme: "bubble" }; // You can also pass a Quill Delta here
   }
 
   componentDidMount() {
-    let element = document.getElementsByClassName('ql-tooltip')[0];
+    let element = document.getElementsByClassName("ql-tooltip")[0];
 
     element.addEventListener("mousedown", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
+      event.preventDefault();
+      event.stopPropagation();
     });
 
     const url = this.props.location.pathname.split("/")[2];
     if (url) {
-        this.fetchPost(url);
+      this.fetchPost(url);
     }
   }
 
@@ -193,6 +192,5 @@ class Quill extends Component {
  * var SizeStyle = ReactQuill.import('attributors/style/size');
  * ReactQuill.register(ColorClass, true);
  * ReactQuill.register(SizeStyle, true);*/
-
 
 export default Quill;

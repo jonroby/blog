@@ -14,23 +14,23 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Route path="/" component={Navbar} />
+      <BrowserRouter>
+        <div className="App">
+          <Route path="/" component={Navbar} />
 
-                <Switch>
-                    <Route exact path="/" component={Posts} />
-                    <Route exact path="/posts" component={Posts} />
-                    <Route exact path="/posts/:post" component={Post} />
+          <Switch>
+            <Route exact path="/" component={Posts} />
+            <Route exact path="/posts" component={Posts} />
+            <Route exact path="/posts/:post" component={Post} />
 
-                    <Route exact path="/editor" component={Quill} />
-                    <Route exact path="/editor/:post" component={Quill} />
-                    <Route exact path="/about" component={About} />
+            <Route exact path="/editor" component={Quill} />
+            <Route exact path="/editor/:post" component={Quill} />
+            <Route exact path="/about" component={About} />
 
-                    <Route path="*" component={Default} />
-                </Switch>
-            </div>
-        </BrowserRouter>
+            <Route path="*" component={Default} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

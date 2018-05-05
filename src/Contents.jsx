@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './Contents.css';
+import "./Contents.css";
 
 class Contents extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Contents extends Component {
     return contents.map(c => {
       return <div>{c}</div>;
     });
-  }
+  };
 
   render() {
     const { width, contents } = this.props;
@@ -31,4 +31,3 @@ class Contents extends Component {
 }
 
 export default Contents;
-
