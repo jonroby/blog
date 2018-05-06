@@ -44,6 +44,10 @@ h2 {
     color: #333333;
 }
 
+h3 {
+    
+}
+
 h4 {
     font-family: "Gotham SSm A", "Gotham SSm B";
     font-style: normal;
@@ -51,7 +55,6 @@ h4 {
     font-size: 20px;
     text-transform: capitalize;
     color: #333333;
-    
 }
 
 p {
@@ -62,23 +65,11 @@ p {
     line-height: 32px;
 }
 
-p s {
-    background-color: #f3f3f3;
-    font-family: "SourceCodePro";
-    padding-left: 6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 6px;
-    font-size: 16px;
-
-    line-height: 26px;
-    font-weight: 400;
-
-    text-decoration: none;
-    /* line height is being used to offset extra height due to font-size??? */
+sup {
+    vertical-align: top;
+    position: relative;
+    top: -0.3em;
 }
-
-sup { vertical-align: top; position: relative; top: -0.3em; }
 
 pre {
     padding: 20px;
@@ -87,24 +78,25 @@ pre {
     background-color: #f2f2f2;
     font-size: 16px;
     white-space: pre-wrap;
+    line-height: 23px;
+}
+
+p code {
+    background-color: #f3f3f3;
+    font-family: "SourceCodePro";
+    border-radius: 0px;
+    font-size: .73em;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
 }
 
 .ql-align-center {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    /* background-color: #f2f2f2; */
 }
-
-.katex  {
-    /* font-size: 1em; */
-    /* font-size: 1em; */
-}
-
-/* .mord { */
-/*     font-size: .7em; */
-/* } */
-
 
 li {
     font-family: "Sentinel A", "Sentinel B";
@@ -115,10 +107,6 @@ li {
 }
 
 @media only screen and (max-width: 740px) {
-    /* .post-container { */
-    /*     width: 100%; */
-    /* } */
-
     .post {
         width: 96%;
         flex: none;
@@ -129,7 +117,6 @@ li {
         line-height: 26px;
     }
 
-
     .post-screen-left {
         display: none;
     }
@@ -137,8 +124,6 @@ li {
     .post-screen-middle {
         width: 100%;
         max-width: none;
-        /* display: flex; */
-        /* flex-direction: column; */
         flex-basis: auto;
     }
 

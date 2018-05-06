@@ -12,11 +12,6 @@ X 8. Style list font and size.
 X 10. On an edit, it jumps to top.
 X 11. Source Code Pro in prod
 
-Routing
-X 1. Needs to have a default route.
-2. Switching navbar colors is atrocious.
-X 3. Only allow 3 routes: /posts /posts/:id /about
-
 Other
 1. Add social links.
 2. Fill out about section.
@@ -43,4 +38,4 @@ X 21. About and Posts need to be highlighted at the correct time.
 22. Bigger line height for pre.
 X 23. Custom styling for background-color affects Katex styling.
 24. Style footnotes header.
-25. Used hack (strikethrough for inline code). Find better solution.
+X 25. Used hack (strikethrough for inline code). Find better solution.

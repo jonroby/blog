@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { InlineMath } from "react-katex";
 import Contents from "./Contents.jsx";
 import SocialLinks from "./SocialMediaLinks.jsx";
 import { db } from "./firebase/firebase.js";
 
 import "./Posts.css";
-
-// <div className="posts-item-number">
-//   <InlineMath math={katexNum} />
-// </div>
 
 const renderPosts = posts => {
   return posts.map((post, i) => {

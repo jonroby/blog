@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import { db } from "./firebase/firebase.js";
 
 import {
@@ -15,7 +15,7 @@ const modules = {
   toolbar: [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
     [{ background: ["#f3f3f3"] }],
-    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+    ["bold", "italic", "underline", "strike", "blockquote", "code-block", "code"],
     [
       { list: "ordered" },
       { list: "bullet" },
@@ -25,7 +25,7 @@ const modules = {
     ["link", "image", "formula"],
     [{ script: "sub" }, { script: "super" }],
     [{ align: [] }],
-    ["clean"]
+    ["clean"],
   ]
 };
 
@@ -38,6 +38,7 @@ const formats = [
   "strike",
   "blockquote",
   "code-block",
+  "code",
   "list",
   "bullet",
   "indent",
@@ -45,31 +46,10 @@ const formats = [
   "image",
   "formula",
   "script",
-  "align"
+  "align",
 ];
 
-/* class ImageBlot extends BlockEmbed {
- *     static create(value) {
- *         let node = super.create();
- *         node.setAttribute('alt', value.alt);
- *         node.setAttribute('src', value.url);
- *         node.setAttribute('class', "img-fluid");
- *         return node;
- *     }
- * 
- *     static value(node) {
- *         return {
- *             alt: node.getAttribute('alt'),
- *             url: node.getAttribute('src')
- *         };
- *     }
- * }
- * ImageBlot.blotName = 'image';
- * ImageBlot.tagName = 'img';*/
-
-/* Quill.register(ImageBlot);*/
-
-class Quill extends Component {
+class Editor extends Component {
   constructor(props) {
     super(props);
     this.state = { text: "", category: "", theme: "bubble" }; // You can also pass a Quill Delta here
@@ -188,9 +168,4 @@ class Quill extends Component {
   }
 }
 
-/* var ColorClass = ReactQuill.import('attributors/class/color');
- * var SizeStyle = ReactQuill.import('attributors/style/size');
- * ReactQuill.register(ColorClass, true);
- * ReactQuill.register(SizeStyle, true);*/
-
-export default Quill;
+export default Editor;
