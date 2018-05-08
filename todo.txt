@@ -39,3 +39,6 @@ X 21. About and Posts need to be highlighted at the correct time.
 X 23. Custom styling for background-color affects Katex styling.
 24. Style footnotes header.
 X 25. Used hack (strikethrough for inline code). Find better solution.
+X 26. Link firebase to jonroby.com
+X 27. Get https://www.jonroby.com
+
