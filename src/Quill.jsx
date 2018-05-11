@@ -140,6 +140,8 @@ class Editor extends Component {
   };
 
   render() {
+    console.log("APP_ENV ", process.env.REACT_APP_ENV)
+    if (process.env.REACT_APP_ENV === "prod") return null;
     return (
       <div className="editor-screen">
         <div className="editor-screen-middle">
