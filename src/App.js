@@ -11,6 +11,17 @@ import Default from "./Default.jsx";
 
 import "./App.css";
 
+const Editor = (env) => {
+  if (env === "prod") return null;
+  return (
+    <div>
+      <Route exact path="/editor" component={Quill} />
+      <Route exact path="/editor/:post" component={Quill} />
+    </div>
+  );
+}
+
+
 class App extends Component {
   render() {
     return (
@@ -23,8 +34,8 @@ class App extends Component {
             <Route exact path="/posts" component={Posts} />
             <Route exact path="/posts/:post" component={Post} />
 
-            <Route exact path="/editor" component={Quill} />
-            <Route exact path="/editor/:post" component={Quill} />
+            { Editor(process.env.REACT_APP_ENV) }
+
             <Route exact path="/about" component={About} />
 
             <Route path="*" component={Default} />
