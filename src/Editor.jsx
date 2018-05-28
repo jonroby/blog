@@ -174,15 +174,11 @@ class MyEditor extends Component {
 
   updatePost = () => {
     const raw = convertToRaw(this.state.editorState.getCurrentContent());
-    console.log("raw ", raw);
-
-    console.log("db.ref ", db.ref("/posts/Currying"));
-
     db.ref("/posts/Currying").set("from site");
   };
 
   render() {
-    if (APP_ENV === 'production') return null;
+    if (APP_ENV === 'prod') return null;
     return (
       <div className="editor-container">
         <div className="editor-controls">
